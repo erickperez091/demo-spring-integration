@@ -17,6 +17,7 @@ import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.StringJoiner;
 
 import static org.springframework.format.annotation.DateTimeFormat.ISO.DATE;
 
@@ -56,17 +57,10 @@ public class Person implements Serializable {
     @JsonSerialize(using = LocalDateSerializer.class)
     private LocalDate dob;
 
+    @Column(name = "genre")
+    private Character genre;
 
     public Person() {
-    }
-
-    public Person(Integer id, String identityCard, String name, String lastName, String middleName, LocalDate dob) {
-        this.id = id;
-        this.identityCard = identityCard;
-        this.name = name;
-        this.lastName = lastName;
-        this.middleName = middleName;
-        this.dob = dob;
     }
 
     public Integer getId() {
@@ -117,15 +111,24 @@ public class Person implements Serializable {
         this.dob = dob;
     }
 
+    public Character getGenre() {
+        return genre;
+    }
+
+    public void setGenre(Character genre) {
+        this.genre = genre;
+    }
+
     @Override
     public String toString() {
-        return "Person{" +
-                "id=" + id +
-                ", identityCard='" + identityCard + '\'' +
-                ", name='" + name + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", middleName='" + middleName + '\'' +
-                ", dob=" + dob +
-                '}';
+        return new StringJoiner(", ", Person.class.getSimpleName() + "[", "]")
+                .add("id=" + id)
+                .add("identityCard='" + identityCard + "'")
+                .add("name='" + name + "'")
+                .add("lastName='" + lastName + "'")
+                .add("middleName='" + middleName + "'")
+                .add("dob=" + dob)
+                .add("genre=" + genre)
+                .toString();
     }
 }

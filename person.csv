@@ -1,5 +1,7 @@
-identityCard,name,lastName,middleName,dob
-123456789,erick,perez,ibarra,1991-01-13
-987654321,alex,perez,ibarra,1986-04-17
-445522150,isaac,perez,campos,1958-12-06
-446784578,maria,ibarra,urena,1958-11-06
+identityCard,name,lastName,middleName,dob,genre
+123456789,nombre_1,apellido_1_1,apellido_2_1,1991-01-13,M
+987654321,nombre_2,apellido_1_2,apellido_2_2,1986-04-17,M
+445522150,nombre_3,apellido_1_3,apellido_2_3,1958-12-06,M
+446784578,nombre_4,apellido_1_4,apellido_2_4,1958-11-06,F
+456762124,nombre_5,apellido_1_5,apellido_2_5,2011-06-23,M
+656751471,nombre_6,apellido_1_6,apellido_2_6,2002-09-06,M

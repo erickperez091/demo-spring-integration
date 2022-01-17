@@ -26,3 +26,6 @@ logging:
           descriptor:
             sql:
               BasicBinder: info
+
+required:
+  age: 18
