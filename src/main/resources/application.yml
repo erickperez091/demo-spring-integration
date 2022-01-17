@@ -1,0 +1,28 @@
+server:
+  port: 8099
+
+spring:
+  application:
+    name: demo-spring-integration
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: ${PASSWORD:password}
+    username: root
+    url: jdbc:mysql://localhost:3306/spring_integration?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: info
+        type:
+          descriptor:
+            sql:
+              BasicBinder: info
